@@ -1,37 +1,34 @@
-import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Header from "./Header";
-import {MainContent,FilterContent} from "./content";
-import {data,categorys} from "./data";
-import Menubar from "./buttons";
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Header } from './myheader';
+import {TopNavbar} from './mynavbar';
+import {Banner} from './banner';
+import { Discription } from './discription';
+import { ImgGallary } from './imggallary';
+import {Artical} from './Artical';
+import { Blog } from './blog';
+import {NewArtical} from './newArtical'
+import {Footer} from './footer'
+
+import './app.css';
+
 
 function App() {
-
-  const [record,setRecord] = useState()
-
-  const newfunction = (a) =>{
-    setRecord(a);
-  } 
-
-  return (
-    <div className="container">
-      {/* header  */}
-      <div className="row">
-        <Header  />
-      </div>
-
-      {/* menubar  */}
-      <div className="row mt-4">
-        <Menubar categorys={categorys} data={data} newfunction={newfunction}  />
-      </div>
-
-      {/* main content  */}
-      <div className="row mt-5">
-        {record ? (<FilterContent record={record} />):(<MainContent data={data} />)}
-      </div>
-
-    </div>
-  );
+  return(
+     <>
+      <Header />
+      <TopNavbar />
+      <Banner />
+      <Discription/>
+      <ImgGallary />
+      <Artical/>
+      <Blog />
+      <NewArtical />
+      <Footer />
+    
+     </>
+  )
 }
+
 
 export default App;
